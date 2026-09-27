@@ -1,17 +1,19 @@
-Nombre:
-Fecha:
+Nombre: Raúl Antonio Nicolás Ávila
+Fecha: 26/09/2026
 
 1. ¿Qué diferencia existe entre Browser, BrowserContext y Page?
-
+Browser: representa el navegador completo que se está ejecutando, por ejemplo Chromium.
+BrowserContext: es una sesión independiente dentro del navegador. Cada contexto puede tener sus propias cookies, almacenamiento local y sesiones.
+Page: representa una pestaña o página web abierta dentro de un BrowserContext.
 
 2. ¿Por qué dos páginas abiertas en contextos diferentes pueden mantener usuarios distintos?
-
+Porque cada BrowserContext funciona como una sesión aislada. Los contextos no comparten automáticamente cookies, localStorage ni otros datos de autenticación.
 
 3. ¿Qué información puede contener un archivo creado con storage_state() y por qué no debe publicarse?
-
+Un archivo generado mediante storage_state() puede almacenar información relacionada con la sesión del usuario, principalmente: Cookies, Datos de almacenamiento local, Tokens o información utilizada para mantener una sesión autenticada.
 
 4. ¿Por qué las credenciales incorrectas son una excepción de negocio y no un error técnico?
-
+Porque el sistema está funcionando correctamente. El servidor recibe el usuario y contraseña, los valida y determina que no son correctos.
 
 5. ¿Qué cambiaría para procesar tickets con tres perfiles distintos?
-
+Se podrían crear tres BrowserContext independientes, uno para cada perfil. Cada contexto tendría su propia sesión y permisos.
